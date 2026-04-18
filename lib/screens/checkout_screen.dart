@@ -223,7 +223,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
  'total_price': (cart.totalPrice + _packagingPrice + _shippingCost).toInt(),
 'shipping_price': _shippingCost.toInt(),
 'packaging_price': _packagingPrice.toInt(),
-      'packaging_price': _packagingPrice,
+      
       'wilaya': _selectedWilaya,
       'daira': _selectedDaira,
       'address': _addressController.text.trim(),
