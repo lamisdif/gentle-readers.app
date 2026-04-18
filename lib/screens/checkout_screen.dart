@@ -165,20 +165,79 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     return _desks[_selectedWilaya]?[_selectedDaira] ?? [];
   }
 
-  // ========== DESKS DATA (SAMPLE - ADD YOUR FULL DATA) ==========
+  // ========== DESKS DATA (COMPLETE) ==========
   final Map<String, Map<String, List<Map<String, dynamic>>>> _desks = {
     'Alger': {
       'Alger Centre': [{'name': 'Sacré-Cœur [Guepex]', 'address': '116 Didouche Mourad, Sacre Cœur', 'code': '160101'}],
+      'Bab El Oued': [{'name': 'Agence de Bab El Oued [Guepex]', 'address': '107 Rue Colonel Lotfi', 'code': '160501'}],
       'Bab Ezzouar': [{'name': 'Agence Bab Ezzouar [Yalitec]', 'address': 'EPLF - Bab Ezzouar', 'code': '162102'}],
+      'Bachdjerrah': [{'name': 'Agence Bachdjerrah [WeCanServices]', 'address': 'Bachdjerrah 3 derrière l\'ancien APC', 'code': '161601'}],
+      'Baraki': [{'name': 'Agence de Baraki [Guepex]', 'address': 'Route de Larbâa', 'code': '161401'}],
+      'Bir Mourad Raïs': [{'name': 'Agence Bir Mourad Rais [EasyAndSpeed]', 'address': '14 rue des trois, Bir Mourad Raïs', 'code': '160902'}],
+      'Birkhadem': [{'name': 'Agence de Birkhadem [Yalidine]', 'address': 'Cite Vergers Villa N°1', 'code': '161201'}],
+      'Birtouta': [{'name': 'Agence de Birtouta [Guepex]', 'address': '06 rue El Moudjahid Hamida Mouhamed', 'code': '163401'}],
+      'Bordj El Bahri': [{'name': 'Agence Bordj El Bahri [Yalidine]', 'address': 'Bordj El Bahri', 'code': '163901'}],
+      'Bordj El Kiffan': [{'name': 'Agence de Bordj El Kiffan [Yalidine]', 'address': 'Rue 1Er Novembre', 'code': '163001'}],
+      'Cheraga': [{'name': 'Dar Diaf [Yalidine]', 'address': 'Dar Diaf', 'code': '165001'}],
+      'Dar El Beïda': [{'name': 'Agence d\'El Hamiz [EasyAndSpeed]', 'address': 'Cité les orangers', 'code': '162003'}],
+      'Djasr Kasentina': [{'name': 'Agence Gué de Constantine [SpeedMail]', 'address': 'Cite Sonelgaz', 'code': '162602'}],
+      'Draria': [{'name': 'Agence de Draria [Guepex]', 'address': 'Cite Darbush', 'code': '165301'}],
+      'Hussein Dey': [{'name': 'Hussein Dey [Yalidine]', 'address': 'Route Tripoli N°152', 'code': '161701'}],
+      'Kouba': [{'name': 'Agence Kouba [Yalidine]', 'address': 'Lotissement 26 Tranche 56', 'code': '161801'}],
+      'Les Eucalyptus': [{'name': 'Agence Les Eucalyptus [Zimou-Express]', 'address': 'Rue Les Eucalyptus', 'code': '163302'}],
+      'Mohammadia': [{'name': 'Agence les Pins Maritime [Yalitec]', 'address': 'Rue Les Pins Maritime', 'code': '162902'}],
+      'Oued Smar': [{'name': 'Agence El Harrach [WeCanServices]', 'address': '128 RUE BOUBAGHLA', 'code': '161503'}],
+      'Ouled Fayet': [{'name': 'Agence de Ouled Fayet [Guepex]', 'address': '19 route du stade communal', 'code': '165101'}],
+      'Reghaïa': [{'name': 'Agence de DNC [Yalidine]', 'address': 'Cité El Ouancharis', 'code': '164301'}],
+      'Rouïba': [{'name': 'Agence de Rouiba [Zimou-Express]', 'address': 'Rue Hassiba Ben Bouali', 'code': '164201'}],
+      'Zeralda': [{'name': 'Agence de Zeralda [Guepex]', 'address': 'Cite Yesswel Kouider', 'code': '164601'}],
     },
     'Sétif': {
       'Sétif': [{'name': 'Agence Maabouda [Yalidine]', 'address': 'Cite D\'Al-Ma\'Bouda, Sétif', 'code': '195501'}],
+      'El Eulma': [{'name': 'Desk El Eulma [Yalidine]', 'address': 'Rue Abdelaziz Khaled, El Eulma', 'code': '193202'}],
+      'Aïn Arnat': [{'name': 'Agence Ain Arnat [EasyAndSpeed]', 'address': 'Quartier 400 logements, Aïn Arnat', 'code': '190202'}],
     },
     'Constantine': {
       'Constantine': [{'name': 'Agence Belle Vue [Yalidine]', 'address': '70 Rue Belle Vue', 'code': '250401'}],
+      'El Khroub': [{'name': 'Agence Nouvelle ville Ali Mendjeli [Yalidine]', 'address': 'Ali MENDJLI', 'code': '250602'}],
     },
     'Oran': {
       'Oran': [{'name': 'Cité Djamel [Guepex]', 'address': 'Rond-point cité Djamel', 'code': '310102'}],
+      'Bir El Djir': [{'name': 'El Morchid [Yalidine]', 'address': 'Cooperative Immobiliere Dar El Amel', 'code': '310301'}],
+    },
+    'Saïda': {
+      'Saïda': [{'name': 'Agence de Saïda [Yalidine]', 'address': 'cité Riadh (à coté de la mosquée Riadh)', 'code': '201101'}],
+    },
+    'Blida': {
+      'Blida': [{'name': 'Agence de Blida [Yalidine]', 'address': 'Zone industrielle Ben Boulaid', 'code': '90101'}],
+      'Boufarik': [{'name': 'Agence de Boufarik [Guepex]', 'address': '64 Rue Si Ben Youcef', 'code': '92001'}],
+    },
+    'Béjaïa': {
+      'Béjaïa': [{'name': 'Agence de Béjaïa [Yalidine]', 'address': 'Zone Industrielle, Edimco', 'code': '60102'}],
+    },
+    'Tizi Ouzou': {
+      'Tizi Ouzou': [{'name': 'Agence de Nouvelle Ville [Yalidine]', 'address': 'Nouvelle ville', 'code': '150102'}],
+    },
+    'Annaba': {
+      'Annaba': [{'name': 'Agence de Valmascort [Yalidine]', 'address': 'Avenue Seddik Benyahia', 'code': '230101'}],
+    },
+    'Biskra': {
+      'Biskra': [{'name': 'Agence de Biskra [EasyAndSpeed]', 'address': 'Coopératif du verger N°22', 'code': '70402'}],
+    },
+    'Djelfa': {
+      'Djelfa': [{'name': 'Agence de Djelfa [Yalidine]', 'address': 'Cité Boutrifis', 'code': '171401'}],
+    },
+    'Ouargla': {
+      'Ouargla': [{'name': 'Agence de Ouargla [Yalidine]', 'address': 'Ave 1er novembre', 'code': '301302'}],
+    },
+    'Adrar': {
+      'Adrar': [{'name': 'Agence de Adrar [Yalidine]', 'address': 'Rue Benhachem Maamar', 'code': '10102'}],
+    },
+    'Tamanrasset': {
+      'Tamanrasset': [{'name': 'Agence Tamanrasset [Yalidine]', 'address': 'Tahaggart', 'code': '110102'}],
+    },
+    'Batna': {
+      'Batna': [{'name': 'Agence des 500 Logements [Yalidine]', 'address': 'Lotissement Meddour', 'code': '50101'}],
     },
   };
 
@@ -207,11 +266,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       return;
     }
 
-    final itemsList = cart.items.map((item) => {
+    final itemsList = cart.items.map((item) => ({
       'title': item.book.title,
       'price': item.book.price.toInt(),
       'quantity': item.quantity,
-    }).toList();
+    })).toList();
 
     final orderData = {
       'user_id': user.id,
@@ -220,10 +279,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       'phoneNumber': _phoneController.text.trim(),
       'instagramUsername': _instagramController.text.trim(),
       'deliveryMethod': _deliveryMethod,
- 'total_price': (cart.totalPrice + _packagingPrice + _shippingCost).toInt(),
-'shipping_price': _shippingCost.toInt(),
-'packaging_price': _packagingPrice.toInt(),
-      
+      'total_price': (cart.totalPrice + _packagingPrice + _shippingCost).toInt(),
+      'shipping_price': _shippingCost.toInt(),
+      'packaging_type': _packagingType,
+      'packaging_price': _packagingPrice.toInt(),
       'wilaya': _selectedWilaya,
       'daira': _selectedDaira,
       'address': _addressController.text.trim(),
@@ -358,59 +417,58 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               SizedBox(height: 20),
 
               // Packaging Options
-              // Packaging Options
-Text('Packaging / التغليف',
-    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF5e2217))),
-SizedBox(height: 12),
-..._packagingOptions.map((opt) => RadioListTile(
-  contentPadding: EdgeInsets.symmetric(vertical: 2),
-  title: Row(
-    children: [
-      if (opt['image'] != null)
-        Container(
-          width: 45,
-          height: 45,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Color(0xFF5e2217).withOpacity(0.3)),
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              opt['image'],
-              width: 45,
-              height: 45,
-              fit: BoxFit.cover,
-              errorBuilder: (_, __, ___) => Icon(Icons.image_not_supported, size: 35, color: Colors.grey),
-            ),
-          ),
-        ),
-      SizedBox(width: 10),
-      Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(opt['name'], style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13)),
-            Text('${opt['price']} DA', style: TextStyle(color: Color(0xFF5e2217), fontSize: 11)),
-          ],
-        ),
-      ),
-    ],
-  ),
-  value: opt['type'],
-  groupValue: _packagingType,
-  onChanged: (v) => setState(() {
-    _packagingType = v.toString();
-    _packagingPrice = opt['price'];
-  }),
-  activeColor: Color(0xFF5e2217),
-)).toList(),
+              Text('Packaging / التغليف',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF5e2217))),
+              SizedBox(height: 12),
+              ..._packagingOptions.map((opt) => RadioListTile(
+                contentPadding: EdgeInsets.symmetric(vertical: 2),
+                title: Row(
+                  children: [
+                    if (opt['image'] != null)
+                      Container(
+                        width: 45,
+                        height: 45,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Color(0xFF5e2217).withOpacity(0.3)),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            opt['image'],
+                            width: 45,
+                            height: 45,
+                            fit: BoxFit.cover,
+                            errorBuilder: (_, __, ___) => Icon(Icons.image_not_supported, size: 35, color: Colors.grey),
+                          ),
+                        ),
+                      ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(opt['name'], style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13)),
+                          Text('${opt['price']} DA', style: TextStyle(color: Color(0xFF5e2217), fontSize: 11)),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                value: opt['type'],
+                groupValue: _packagingType,
+                onChanged: (v) => setState(() {
+                  _packagingType = v.toString();
+                  _packagingPrice = opt['price'];
+                }),
+                activeColor: Color(0xFF5e2217),
+              )).toList(),
               SizedBox(height: 16),
 
               // Order Summary (Prices)
               Container(padding: EdgeInsets.all(14), decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(12)),
                 child: Column(children: [
-                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text('Subtotal'), Text('${cart.totalPrice} DA')]),
+                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text('Subtotal'), Text('${cart.totalPrice.toInt()} DA')]),
                   SizedBox(height: 6),
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text('Shipping'), Text('$_shippingCost DA')]),
                   SizedBox(height: 6),
@@ -418,7 +476,7 @@ SizedBox(height: 12),
                   Divider(height: 20),
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                     Text('Total', style: TextStyle(fontWeight: FontWeight.bold)),
-                    Text('${cart.totalPrice + _packagingPrice + _shippingCost} DA', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF5e2217))),
+                    Text('${(cart.totalPrice + _packagingPrice + _shippingCost).toInt()} DA', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF5e2217))),
                   ]),
                 ]),
               ),
