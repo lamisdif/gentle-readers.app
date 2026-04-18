@@ -209,7 +209,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
     final itemsList = cart.items.map((item) => {
       'title': item.book.title,
-      'price': item.book.price,
+      'price': item.book.price.toInt(),
       'quantity': item.quantity,
     }).toList();
 
@@ -220,9 +220,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       'phoneNumber': _phoneController.text.trim(),
       'instagramUsername': _instagramController.text.trim(),
       'deliveryMethod': _deliveryMethod,
-      'total_price': cart.totalPrice + _packagingPrice + _shippingCost,
-      'shipping_price': _shippingCost,
-      'packaging_type': _packagingType,
+ 'total_price': (cart.totalPrice + _packagingPrice + _shippingCost).toInt(),
+'shipping_price': _shippingCost.toInt(),
+'packaging_price': _packagingPrice.toInt(),
       'packaging_price': _packagingPrice,
       'wilaya': _selectedWilaya,
       'daira': _selectedDaira,

@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../widgets/animated_text.dart';
 import '../services/auth_service.dart';
+import '../services/supabase_config.dart';  // ← ADD THIS IMPORT
 import 'login_screen.dart';
 import 'home_screen.dart';
 
@@ -19,6 +20,10 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
   @override
   void initState() {
     super.initState();
+    
+    // ========== TEST SUPABASE CONNECTION ==========
+    _testSupabaseConnection();
+    // ==============================================
     
     _textController = AnimationController(
       duration: Duration(milliseconds: 800),
@@ -58,6 +63,17 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
       }
     });
   }
+
+  // ========== TEST FUNCTION ==========
+  Future<void> _testSupabaseConnection() async {
+    try {
+      final res = await SupabaseConfig.client.from('profiles').select();
+      print('✅ Supabase connected! Data: $res');
+    } catch (e) {
+      print('❌ Supabase error: $e');
+    }
+  }
+  // ===================================
 
   @override
   void dispose() {
