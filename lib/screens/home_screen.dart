@@ -415,11 +415,11 @@ class _BooksGridWidgetState extends State<BooksGridWidget> {
 
     return GridView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.all(16),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 0.80,
+        childAspectRatio: 0.65,
         crossAxisSpacing: 16,
         mainAxisSpacing: 20,
       ),
@@ -444,67 +444,67 @@ class _BooksGridWidgetState extends State<BooksGridWidget> {
                   color: Colors.grey.withOpacity(0.15),
                   spreadRadius: 1,
                   blurRadius: 8,
-                  offset: Offset(0, 2),
+                  offset: const Offset(0, 2),
                 ),
               ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Book image
                 ClipRRect(
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
                   child: Image.network(
                     book.image,
-                    height: 100,
+                    height: 140,
                     width: double.infinity,
                     fit: BoxFit.cover,
                     errorBuilder: (_, __, ___) => Container(
-                      height: 110,
+                      height: 140,
                       color: Color(0xFFf5f5dc),
                       child: Icon(Icons.book,
                           size: 50, color: Color(0xFF5e2217).withOpacity(0.5)),
                     ),
                   ),
                 ),
+                // Book info
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              book.title,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 11,
-                                color: Color(0xFF5e2217),
-                              ),
-                            ),
-                            SizedBox(height: 2),
-                            Text(
-                              book.author,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                  fontSize: 10, color: Colors.grey[600]),
-                            ),
-                            SizedBox(height: 2),
-                            Text(
-                              '${book.price} DA',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                                color: Color(0xFF5e2217),
-                              ),
-                            ),
-                          ],
+                        // Title
+                        Text(
+                          book.title,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 13,
+                            color: Color(0xFF5e2217),
+                          ),
                         ),
+                        const SizedBox(height: 4),
+                        // Author
+                        Text(
+                          book.author,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontSize: 11, color: Colors.grey[600]),
+                        ),
+                        const SizedBox(height: 4),
+                        // Price
+                        Text(
+                          '${book.price} DA',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            color: Color(0xFF5e2217),
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        // Favorite button row
                         Row(
                           children: [
                             IconButton(
@@ -523,11 +523,12 @@ class _BooksGridWidgetState extends State<BooksGridWidget> {
                                 });
                               },
                               padding: EdgeInsets.zero,
-                              constraints: BoxConstraints(),
+                              constraints: const BoxConstraints(),
                             ),
-                            Spacer(),
+                            const Spacer(),
                           ],
                         ),
+                        // Add to Cart button
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
@@ -538,31 +539,31 @@ class _BooksGridWidgetState extends State<BooksGridWidget> {
                                       SnackBar(
                                         content: Text(
                                           '${book.title} added',
-                                          style: TextStyle(fontSize: 12),
+                                          style: const TextStyle(fontSize: 12),
                                         ),
-                                        backgroundColor: Color(0xFF5e2217),
-                                        duration: Duration(seconds: 1),
+                                        backgroundColor: const Color(0xFF5e2217),
+                                        duration: const Duration(seconds: 1),
                                         behavior: SnackBarBehavior.floating,
-                                        margin: EdgeInsets.all(16),
+                                        margin: const EdgeInsets.all(16),
                                       ),
                                     );
                                   }
                                 : null,
                             style: ElevatedButton.styleFrom(
                               backgroundColor: book.isAvailable
-                                  ? Color(0xFF5e2217)
+                                  ? const Color(0xFF5e2217)
                                   : Colors.grey,
                               foregroundColor: Colors.white,
-                              padding: EdgeInsets.symmetric(vertical: 4),
+                              padding: const EdgeInsets.symmetric(vertical: 8),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              minimumSize: Size(double.infinity, 26),
+                              minimumSize: const Size(double.infinity, 32),
                             ),
                             child: Text(
                               book.isAvailable ? 'Add to Cart' : 'Out of Stock',
-                              style: TextStyle(
-                                  fontSize: 10, fontWeight: FontWeight.w500),
+                              style: const TextStyle(
+                                  fontSize: 11, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ),
