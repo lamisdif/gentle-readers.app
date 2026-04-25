@@ -244,7 +244,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   final List<Map<String, dynamic>> _packagingOptions = [
     {'type': 'none', 'name': 'No packaging / بدون تغليف', 'price': 0, 'image': null},
     {'type': 'papier_craft', 'name': 'Papier Craft / ورق كرافت', 'price': 500, 'image': 'assets/images/papier-craft.PNG'},
-    {'type': 'surprise', 'name': 'Surprise / مفاجأة', 'price': 500, 'image': 'assets/images/surprise.PNG'},
+    {'type': 'surprise', 'name': 'Surprise / مفاجأة', 'price': 500, 'image': 'assets/images/surprise.png'},
   ];
 
   final List<Map<String, dynamic>> _deliveryMethods = [
